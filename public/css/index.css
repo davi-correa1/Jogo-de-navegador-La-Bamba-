@@ -1,0 +1,67 @@
+body {
+    size: 100vh;
+    background-image: url('/images/inicial.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    max-width: 100%;
+    margin: auto;
+    padding: 0;
+}
+
+.interface {
+    background-color: rgba(255, 200, 176, 0);
+    width: 30vh;
+    height: 20vh;
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+    padding-left: 15vh;
+    padding-right: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 53vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 15px;
+}
+
+button {
+    border: none;
+    border-radius: 15px;
+    width: 35vh;
+    height: 10vh;
+    place-items: bottom;
+    margin: auto;
+    font-size: larger;   
+    background: linear-gradient(0deg, #ff4500 0%, #ff8c00 50%, #ffd700 100%);
+    color: #ffffff;
+    box-shadow: 0px 0px 10px 0px rgba(188, 82, 43, 0.9);
+}
+
+button:hover {
+    color: red;
+    box-shadow: 0 0 15px #ff4500, 
+              0 0 30px #ff8c00, 
+              inset 0 0 10px #ffffff66;
+    transition: all 0.3s ease;
+    animation: queimar 1.5s ease-in-out infinite alternate;
+     background: #111111;
+    background-image: linear-gradient(0deg, #ff3300 0%, #ffaa00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    text-shadow: 0px 0px 10px rgb(255, 102, 0);
+    transform: scale(1.02);
+}
+@keyframes queimar {
+  0% {
+    box-shadow: 0 0 10px #ff4500, 0 0 30px #ff8c00;
+    filter: brightness(1);
+  }
+  100% {
+    box-shadow: 0 0 25px #ff1a00, 0 -3px 45px #ff8c00, 0 -5px 10px #ffd700;
+    filter: brightness(1.2);
+  }
+}
