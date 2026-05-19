@@ -3,7 +3,7 @@ const path = require('path');
 const app = express();
 
 app.set('view engine', 'ejs');
-app.set('view', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Estou definindo porta e hostname aqui
@@ -12,14 +12,14 @@ const HOSTNAME = 'localhost';
 
 // Aqui estão as variaveis das rotas HTML
 const HTML = {
-    index: '/public/index.html'
+    index: 'index.html'
 };
 
 // Aqui estão as variaveis das rotas EJS 
 const EJS = {
-    play: '/views/play.ejs'
-    //createAccount:  '',
-    //chooseCharacter: ''
+    signIn: 'signin',
+    createAccount: 'createAccount',
+    chooseCharacter: 'chooseCharacter'
 };
 
 // Rota principal
@@ -27,14 +27,14 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, HTML.index));
 });
 
-// Rota para login 
-app.get('/play', (req, res) => {
-    res.render(EJS.play)
+// Rota para sign in
+app.get('/sign-in', (req, res) => {
+    res.render(EJS.signIn);
 });
 
-// Rota para criar conta 
+// Rota para sign up
 app.get("/Create-Account", (req, res) => {
-    res.render(EJS.createAccount)
+    res.render(EJS.createAccount);
 });
 
 // Rota para escolher personagens
@@ -46,6 +46,6 @@ app.get("/choose-character", (req, res) => {
 
 
 app.listen( PORT, HOSTNAME, () => {
-    //console.clear(); // Apenas limpa o terminal antes de mostrar a url
+    console.clear(); // Apenas limpa o terminal antes de mostrar a url
     console.log(`http://${HOSTNAME}:${PORT}`); // Mostra a url
 });
